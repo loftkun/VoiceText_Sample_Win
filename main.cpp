@@ -2,7 +2,6 @@
 /**
  * @file		VoiceText Japanese Engine API サンプル(Windows C/C++)
  * @brief		
- *
  *	vt_jpn.dllを使用。
  *  VoiceText Japanese Engine APIのサンプルです。
  *  個人で楽しむのみに留めましょう。
