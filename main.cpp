@@ -217,7 +217,7 @@ int text_to_buf()
 		&nFramesize,				//フレームバッファに保存された合成音のサイズ
 		frameflag,					//APIの動作を指定するflag
 		0,							//スレッド使う場合に区別するためのスレッド番号
-		1,							//show(男性)
+		SPEAKER_ID,					//話者ID
 		-1, -1, -1, -1, -1, -1);	//pitch, speed, volume, pause, dictidx, texttype
 	if(ret < 0){
 		printf("[ERR ][%s] VT_TextToBuffer_JPN ret=%d\n", __FUNCTION__, ret);
@@ -256,7 +256,7 @@ int text_to_buf()
 			&nFramesize,					//フレームバッファに保存された合成音のサイズ
 			frameflag,						//APIの動作を指定するflag
 			0,								//スレッド使う場合に区別するためのスレッド番号
-			1,								//show(男性)
+			SPEAKER_ID,						//話者ID
 			-1, -1, -1, -1, -1, -1);		//pitch, speed, volume, pause, dictidx, texttype
 		printf("[INFO][%s] VT_TextToBuffer_JPN ret=%d nFramesize=%d\n", __FUNCTION__, ret, nFramesize);
 		if(ret < 0){
