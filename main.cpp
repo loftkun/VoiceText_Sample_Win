@@ -85,8 +85,7 @@ int load()
 	}
 	//DLLから初期化APIアドレスを取得
 	typedef short	(*pFunc_VT_LOADTTS_JPN)(HWND hWnd, int nSpeakerID, char *db_path, char *licensefile);
-	pFunc_VT_LOADTTS_JPN Func_VT_LOADTTS_JPN = 
-		Func_VT_LOADTTS_JPN=(pFunc_VT_LOADTTS_JPN)GetProcAddress(hModule,"VT_LOADTTS_JPN");
+	pFunc_VT_LOADTTS_JPN Func_VT_LOADTTS_JPN = (pFunc_VT_LOADTTS_JPN)GetProcAddress(hModule,"VT_LOADTTS_JPN");
 	if(Func_VT_LOADTTS_JPN == NULL){
 		printf("[ERR ][%s]\n", __FUNCTION__);
 		exit(1);
@@ -124,8 +123,7 @@ int unload()
 	}
 	//DLLから終了APIアドレスを取得
 	typedef void (*pFunc_VT_UNLOADTTS_JPN)(int nSpeakerID);
-	pFunc_VT_UNLOADTTS_JPN	Func_VT_UNLOADTTS_JPN = 
-		Func_VT_UNLOADTTS_JPN=(pFunc_VT_UNLOADTTS_JPN)GetProcAddress(hModule,"VT_UNLOADTTS_JPN");
+	pFunc_VT_UNLOADTTS_JPN	Func_VT_UNLOADTTS_JPN =(pFunc_VT_UNLOADTTS_JPN)GetProcAddress(hModule,"VT_UNLOADTTS_JPN");
 	if(Func_VT_UNLOADTTS_JPN == NULL){
 		printf("[ERR ][%s]\n", __FUNCTION__);
 		exit(1);
@@ -154,8 +152,7 @@ int text_to_file()
 	}
 	//DLLから音声ファイル出力APIアドレスを取得
 	typedef short	(*pFunc_VT_TextToFile_JPN)(int fmt, char *tts_text, char *filename, int nSpeakerID, int pitch, int speed, int volume, int pause, int dictidx, int texttype);
-	pFunc_VT_TextToFile_JPN	Func_VT_TextToFile_JPN = NULL;
-    Func_VT_TextToFile_JPN=(pFunc_VT_TextToFile_JPN)GetProcAddress(hModule,"VT_TextToFile_JPN");
+	pFunc_VT_TextToFile_JPN	Func_VT_TextToFile_JPN = (pFunc_VT_TextToFile_JPN)GetProcAddress(hModule,"VT_TextToFile_JPN");
 	if(Func_VT_TextToFile_JPN == NULL){
 		printf("[ERR ][%s]\n", __FUNCTION__);
 		unload();
@@ -198,8 +195,7 @@ int text_to_buf()
 
 	//DLLから音声バッファ出力APIアドレスを取得
 	typedef int		(*pFunc_VT_TextToBuffer_JPN)(int fmt, char *tts_text, char *output_buff, int *output_len, int flag, int nThreadID, int nSpeakerID, int pitch, int speed, int volume, int pause, int dictidx, int texttype);
-	pFunc_VT_TextToBuffer_JPN	Func_VT_TextToBuffer_JPN = NULL;
-	Func_VT_TextToBuffer_JPN=(pFunc_VT_TextToBuffer_JPN)GetProcAddress(hModule,"VT_TextToBuffer_JPN");
+	pFunc_VT_TextToBuffer_JPN	Func_VT_TextToBuffer_JPN = (pFunc_VT_TextToBuffer_JPN)GetProcAddress(hModule,"VT_TextToBuffer_JPN");
 	if(Func_VT_TextToBuffer_JPN == NULL){
 		printf("[ERR ][%s]\n", __FUNCTION__);
 		unload();
@@ -352,8 +348,7 @@ int text_play()
 	}
 	//DLLから合成音再生APIアドレスを取得
 	typedef short	(*pFunc_VT_PLAYTTS_JPN)(HWND hcaller, UINT umsg, char *text_buff, int nSpeakerID, int pitch, int speed, int volume, int pause, int dictidx, int texttype);
-	pFunc_VT_PLAYTTS_JPN	Func_VT_PLAYTTS_JPN = NULL;
-	Func_VT_PLAYTTS_JPN = (pFunc_VT_PLAYTTS_JPN)GetProcAddress(hModule,"VT_PLAYTTS_JPN");
+	pFunc_VT_PLAYTTS_JPN	Func_VT_PLAYTTS_JPN = (pFunc_VT_PLAYTTS_JPN)GetProcAddress(hModule,"VT_PLAYTTS_JPN");
 	if(Func_VT_PLAYTTS_JPN == NULL){
 		printf("[ERR ][%s]\n", __FUNCTION__);
 		unload();
